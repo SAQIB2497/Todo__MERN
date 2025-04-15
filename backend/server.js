@@ -16,10 +16,7 @@ connectDB();
 // Middleware
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://todo-frontend-ten-woad.vercel.app/",
-    ],
+    origin: "https://todo-frontend-ten-woad.vercel.app/",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
