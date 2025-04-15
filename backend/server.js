@@ -16,13 +16,15 @@ connectDB();
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:5173", 
+    origin: [
+      "http://localhost:5173",
+      "https://todo-frontend-ten-woad.vercel.app/",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
-    credentials: true, 
+    credentials: true,
   })
 );
-
 
 app.use(express.json());
 
@@ -37,4 +39,3 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Your app is listening on port ${port}`);
 });
-
